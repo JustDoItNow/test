@@ -19,6 +19,10 @@ func main() {
   fmt.Println("count value: ", count)
 }
 
+// Notes:
+// init.go is defined in the same package (it doesn't necessarily to be named 'init.go', just to highligh its functionality)
+// main.go is loaded first by runtime, so its init() is called first, and then the init() func in init.go
+
 // output:
 // $ go run .
 // init() function is called: count is initilized to  100
