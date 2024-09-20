@@ -27,7 +27,7 @@ import (
     "fmt"
     "time"
 )
-
+ 
 func main() {
     ticker := time.NewTicker(1 * time.Second)
     defer ticker.Stop() // Ensure ticker is stopped when main exits
