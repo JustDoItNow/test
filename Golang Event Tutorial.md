@@ -1,4 +1,4 @@
-**Golang Ticker/Channel Usage** 
+#Golang Ticker/Channel Usage
 In Go (Golang), ticker channels are used to handle periodic tasks. The time package provides the Ticker type for this purpose. Here’s a breakdown of how you can use ticker channels in Go:
 
 **Basics** 
@@ -88,7 +88,7 @@ func main() {
 *ticker.Stop(): Stops the ticker and releases associated resources.
 *Ticker channels are a powerful way to handle periodic tasks in Go, allowing you to manage timing and perform actions at regular intervals efficiently.
 
-**Basic Usage of gookit/event**
+#Basic Usage of gookit/event
 **First, install the package using:**
 
 go get github.com/gookit/color
