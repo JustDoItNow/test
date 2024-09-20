@@ -7,17 +7,17 @@ A Ticker sends the current time on its channel at regular intervals. This is use
 **Creating a Ticker** 
 You create a ticker using time.NewTicker(d), where d is a time.Duration specifying the interval between ticks.
 
-`ticker := time.NewTicker(1 * time.Second)
-defer ticker.Stop() // Ensure the ticker is stopped when no longer needed`
+`ticker := time.NewTicker(1 * time.Second)`
+`defer ticker.Stop() // Ensure the ticker is stopped when no longer needed`
 
 **Receiving Ticks** 
 You receive ticks by reading from the ticker's channel in a loop.
-`
-for t := range ticker.C {
+
+`for t := range ticker.C {
     // This code runs every 1 second
     fmt.Println("Tick at", t)
-}
-`
+}`
+
 **Example: Periodic Task**
 Here’s a complete example of using a ticker to print a message every second:
 `
