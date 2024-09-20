@@ -1,17 +1,17 @@
-**Golang Ticker/Channel Usage**
+**Golang Ticker/Channel Usage** 
 In Go (Golang), ticker channels are used to handle periodic tasks. The time package provides the Ticker type for this purpose. Here’s a breakdown of how you can use ticker channels in Go:
 
-**Basics**
+**Basics** 
 A Ticker sends the current time on its channel at regular intervals. This is useful for tasks that need to be performed periodically, such as polling a service or performing a recurring update.
 
-**Creating a Ticker**
+**Creating a Ticker** 
 You create a ticker using time.NewTicker(d), where d is a time.Duration specifying the interval between ticks.
 
 ticker := time.NewTicker(1 * time.Second)
 
 defer ticker.Stop() // Ensure the ticker is stopped when no longer needed
 
-**Receiving Ticks**
+**Receiving Ticks** 
 You receive ticks by reading from the ticker's channel in a loop.
 
 for t := range ticker.C {
@@ -22,7 +22,7 @@ for t := range ticker.C {
 **Example: Periodic Task**
 Here’s a complete example of using a ticker to print a message every second:
 
-`package main
+package main
 
 import (
     "fmt"
@@ -44,7 +44,7 @@ func main() {
 
     // Simulate doing other work in the main goroutine
     time.Sleep(5 * time.Second) // Sleep for 5 seconds
-}`
+}
 
 **Stopping a Ticker**
 You should always stop a ticker when you’re done with it to release resources.
