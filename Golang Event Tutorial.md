@@ -130,53 +130,58 @@ The gookit/event package is a Go library designed to handle events and provide a
 **When to Use gookit/event**
 
 **Event-Driven Architecture:**
-If your application is built around an event-driven architecture, where different components or services need to respond to events, gookit/event can help manage these events efficiently.
+* If your application is built around an event-driven architecture, where different components or services need to respond to
+* events, gookit/event can help manage these events efficiently.
 Example: A web application where different parts of the application need to respond to user actions, like form submissions or button clicks.
+
 **Decoupling Components:**
-Use gookit/event when you want to decouple different parts of your application. By using events, you can ensure that components communicate through a central event dispatcher rather than direct function calls.
-Example: In a large system where multiple services or modules need to interact but should remain loosely coupled.
+* Use gookit/event when you want to decouple different parts of your application. By using events, you can ensure that components communicate through a central event dispatcher rather than direct function calls.
+* Example: In a large system where multiple services or modules need to interact but should remain loosely coupled.
+* 
 **Handling Multiple Event Types:**
-When your application needs to handle a variety of different events and each event type requires different handling logic, gookit/event provides a flexible system to manage these various events.
-Example: An e-commerce application where you need to handle events like order creation, payment processing, and inventory updates.
+* When your application needs to handle a variety of different events and each event type requires different handling logic, gookit/event provides a flexible system to manage these various events.
+* Example: An e-commerce application where you need to handle events like order creation, payment processing, and inventory updates.
+  
 **Custom Event Handling:**
 If you need to implement custom event handling with specific event data and responses, gookit/event provides a framework to define and handle custom events.
 Example: Custom logging events where you need to process and log specific details based on different triggers in your application.
+
 **Asynchronous Event Processing:**
 When you have asynchronous tasks that need to be triggered by specific events, gookit/event can help manage these tasks and handle them in the background.
 Example: Background job processing where certain events trigger jobs or tasks to be processed asynchronously.
+
 **Event-driven architecture (EDA) within a single application**
 Event-driven architecture (EDA) within a single application offers several advantages, particularly for complex, modular, and scalable applications. Here’s a detailed look at the benefits of using event notifications within a single application:
 
 **Decoupling Components**
-
 *Loose Coupling: Components or services communicate through events rather than direct function calls or shared state. This reduces dependencies and allows components to evolve independently.
 *Flexibility: Components can be replaced or updated without affecting others, as long as they adhere to the expected event contracts.
 
 **Scalability**
 
-*Asynchronous Processing: Events can be handled asynchronously, which helps in scaling parts of the application that need to process events without blocking other operations.
-Load Distribution: Event-driven systems can distribute the load across multiple handlers or workers, improving the application's ability to handle high volumes of events.
+* Asynchronous Processing: Events can be handled asynchronously, which helps in scaling parts of the application that need to process events without blocking other operations.
+* Load Distribution: Event-driven systems can distribute the load across multiple handlers or workers, improving the application's ability to handle high volumes of events.
 
 **Improved Maintainability**
 
-Modular Design: By breaking down functionality into discrete event-driven components, the application becomes easier to understand and maintain.
-Separation of Concerns: Each component focuses on a specific aspect of the application, handling only the events relevant to it. This separation helps in debugging and testing.
+* Modular Design: By breaking down functionality into discrete event-driven components, the application becomes easier to understand and maintain.
+* Separation of Concerns: Each component focuses on a specific aspect of the application, handling only the events relevant to it. This separation helps in debugging and testing.
+
 **Enhanced Flexibility and Extensibility**
+* Dynamic Event Handling: New event types and handlers can be added without changing existing code. This flexibility is useful for extending application features or integrating new functionalities.
+* Event Subscription: Components can subscribe to events they are interested in, making it easy to add or remove features dynamically.
 
-Dynamic Event Handling: New event types and handlers can be added without changing existing code. This flexibility is useful for extending application features or integrating new functionalities.
-Event Subscription: Components can subscribe to events they are interested in, making it easy to add or remove features dynamically.
-Improved Responsiveness
+**Improved Responsiveness**
+* Real-Time Updates: Event-driven systems can react to changes or inputs in real-time, providing more immediate feedback and interactions.
+* Event-Driven UI: In user interfaces, events like button clicks or form submissions can trigger updates or actions asynchronously, leading to a more responsive and interactive user experience.
 
-Real-Time Updates: Event-driven systems can react to changes or inputs in real-time, providing more immediate feedback and interactions.
-Event-Driven UI: In user interfaces, events like button clicks or form submissions can trigger updates or actions asynchronously, leading to a more responsive and interactive user experience.
-Enhanced Testing and Debugging
+**Enhanced Testing and Debugging**
+* Isolation: Testing individual components becomes easier because they handle specific events and do not depend directly on other components.
+* Event Logging: Events can be logged, making it easier to track the flow of data and debug issues by examining the sequence of events.
 
-Isolation: Testing individual components becomes easier because they handle specific events and do not depend directly on other components.
-Event Logging: Events can be logged, making it easier to track the flow of data and debug issues by examining the sequence of events.
-Simplified Coordination of Complex Workflows
-
-Workflow Management: Complex workflows that involve multiple steps or stages can be managed through a series of events. Each event represents a step in the workflow, making it easier to manage and coordinate.
-Event Chaining: Events can trigger other events, allowing for sophisticated and flexible control flows within the application.
+**Simplified Coordination of Complex Workflows**
+* Workflow Management: Complex workflows that involve multiple steps or stages can be managed through a series of events. Each event represents a step in the workflow, making it easier to manage and coordinate.
+* Event Chaining: Events can trigger other events, allowing for sophisticated and flexible control flows within the application.
 
 **Example Scenarios**
 
@@ -194,4 +199,3 @@ Event-Driven Advantage: Events related to user actions can be captured and sent 
 
 **Conclusion**
 Event-driven architecture within a single application provides significant benefits in terms of decoupling, scalability, maintainability, flexibility, and responsiveness. It is particularly useful for complex applications that require modular design, real-time interactions, and dynamic behavior. By adopting an event-driven approach, you can build more robust, scalable, and adaptable applications.
-
