@@ -7,21 +7,20 @@ A Ticker sends the current time on its channel at regular intervals. This is use
 **Creating a Ticker** 
 You create a ticker using time.NewTicker(d), where d is a time.Duration specifying the interval between ticks.
 
-ticker := time.NewTicker(1 * time.Second)
-
-defer ticker.Stop() // Ensure the ticker is stopped when no longer needed
+`ticker := time.NewTicker(1 * time.Second)
+defer ticker.Stop() // Ensure the ticker is stopped when no longer needed`
 
 **Receiving Ticks** 
 You receive ticks by reading from the ticker's channel in a loop.
-
+`
 for t := range ticker.C {
     // This code runs every 1 second
     fmt.Println("Tick at", t)
 }
-
+`
 **Example: Periodic Task**
 Here’s a complete example of using a ticker to print a message every second:
-
+`
 package main
 
 import (
@@ -45,7 +44,7 @@ func main() {
     // Simulate doing other work in the main goroutine
     time.Sleep(5 * time.Second) // Sleep for 5 seconds
 }
-
+`
 **Stopping a Ticker**
 You should always stop a ticker when you’re done with it to release resources.
 
@@ -54,7 +53,7 @@ You should always stop a ticker when you’re done with it to release resources.
 **Using Tickers with Other Channels**
 
 You can combine tickers with other channels to perform more complex tasks. For example, you might use a ticker to periodically check if there are messages on another channel.
-
+`
 func main() {
     ticker := time.NewTicker(1 * time.Second)
     defer ticker.Stop()
@@ -81,7 +80,7 @@ func main() {
         }
     }
 }
-
+`
 **Summary**
 *time.NewTicker(d time.Duration): Creates a ticker that ticks every d duration.
 *ticker.C: Channel on which ticks are sent.
@@ -100,7 +99,7 @@ func main() {
 
 **Summary**
 Use gookit/event when you need a robust event management system in Go that supports event registration, dispatching, and handling. It is suitable for applications with complex event interactions, where decoupling components and managing multiple event types is beneficial.
-
+`
 package main
 
 import (
@@ -123,7 +122,7 @@ func main() {
     em.On("test.event", event.ListenerFunc(handler), event.High)
     em.Trigger("test.event", map[string]any{"hello": 100})
 }
-
+`
 **When to use gookit event**
 The gookit/event package is a Go library designed to handle events and provide a simple event dispatching system. It's particularly useful when you need to manage and handle events in a Go application, especially when dealing with complex event-driven architectures.
 
